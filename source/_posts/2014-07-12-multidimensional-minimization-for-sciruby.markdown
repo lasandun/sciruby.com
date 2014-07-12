@@ -6,8 +6,8 @@ comments: true
 author: Lahiru Lasandun
 categories: [GSOC2014,GSOC,Integration,Students]
 ---
-Multidimensional minimization methods
--------------------------------------
+Multidimensional minimization methods for SciRuby
+-------------------------------------------------
 
 This is a new feature to SciRuby minimization gem. This gives some numerical methods to find local minimum of a multi variable function. These methods can be categorized into two groups: gradient methods and non-gradient methods. I have implemented four methods for SciRuby as below.
 
@@ -30,7 +30,7 @@ min.f_minimum
 ```
 
 Powell's method
---------------
+---------------
 This requires a starting point. In addition to that, the method should be given an upper bound and lower bound for each variable. (bounds for each axis direction)
 ```ruby
 min = Minimization::PowellMinimizer.new(f, start_point, [-x1_lower, -x2_lower, -x3_lower], [x1_upper, x2_upper, x3_upper])
@@ -42,7 +42,7 @@ min.f_minimum
 ```
 
 Gradient methods
----------------
+----------------
 For above two gradient methods, the first derivative is enough. Technically it requires the second derivative. But it approximates the second derivatives itself.
 ```ruby
 f  = proc{ |x| (x[0] - @p[0])**2 + (x[1] - @p[1])**2 + (x[2] - @p[2])**2 }
